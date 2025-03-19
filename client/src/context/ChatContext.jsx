@@ -31,7 +31,7 @@ export const ChatContextProvider = ({ children, user }) => {
 
   // initialize socket
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io("https://socket-her6.onrender.com/");
     setSocket(newSocket);
 
     return () => {

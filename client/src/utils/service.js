@@ -1,17 +1,18 @@
-export const baseUrl = "http://localhost:5000/api";
+export const baseUrl = "https://backend-cu-recom.up.railway.app/api";
 
 export const postRequest = async (url, body) => {
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMDE3MTIwNTExMjgwMDAwMDIyNCIsImlhdCI6MTc0MjI0NDk2OCwiZXhwIjoxNzQyMzMxMzY4fQ.Pyic1ijRZx542Ikupaqhy5ArZ6snidxK-AZfab80m6U';
-  console.log('Post request')
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMDE3MDY3MDc0OTIwMDAwMDIzMiIsImlhdCI6MTc0MjM4NzQzMCwiZXhwIjoxNzQ0OTc5NDMwfQ.LC66ONxgd5MkHnFrkfQ2pWXAOErBrCBCpQcnSN-cIxY";
+  console.log("Post request");
   const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}` 
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(body),
   });
-  
+
   const data = await response.json();
 
   if (!response.ok) {
@@ -30,20 +31,21 @@ export const postRequest = async (url, body) => {
 };
 
 export const getRequest = async (url) => {
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMDE3MTIwNTExMjgwMDAwMDIyNCIsImlhdCI6MTc0MjI0NDk2OCwiZXhwIjoxNzQyMzMxMzY4fQ.Pyic1ijRZx542Ikupaqhy5ArZ6snidxK-AZfab80m6U';
-  console.log('Get request')
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMDE3MDY3MDc0OTIwMDAwMDIzMiIsImlhdCI6MTc0MjM4NzQzMCwiZXhwIjoxNzQ0OTc5NDMwfQ.LC66ONxgd5MkHnFrkfQ2pWXAOErBrCBCpQcnSN-cIxY";
+  console.log("Get request");
   const response = await fetch(url, {
     method: "GET",
     headers: {
-      "Authorization": `Bearer ${token}` 
-    }
+      Authorization: `Bearer ${token}`,
+    },
   });
 
   console.log("Response:", response);
 
   const data = await response.json();
 
-  console.log("Data",data);
+  console.log("Data", data);
 
   if (!response.ok) {
     let message = "An error occured...";
